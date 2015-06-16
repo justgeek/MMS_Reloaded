@@ -140,18 +140,21 @@ html,body
 {
 	width: 100%;
 	height: 100%;
-}
-#meetings-dashboard
-{
-	width: 100%;
-	height: 100%;
 	box-sizing:border-box;
-	padding: 10px;	
-}
-#meetings-panel
-{
-	width: 100%;
-	height: 100%;
-	background-color: #fafafa;
 
+}
+#profile-panel
+{
+		
+	background-color: #525252;
+
+}
+#profile-pic
+{
+	position: relative;
+	height: 100px;
+	width: 100px;
+	margin: 25px auto;
+	border-radius: 100%;
+	border: 2px solid #D32F2F;	
 }

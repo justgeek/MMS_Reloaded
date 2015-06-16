@@ -36,55 +36,98 @@
     <body>
 
     	<div id="header">
-
     		<div class="pure-g full-height">
-
     			<div id="logo" class="pure-u-1-4">
     				logo
     			</div>
-          <div class="pure-u-5-8">&nbsp;</div>
-    			<div id="header-tools" class="pure-u-1-8">
-            <div id="create-meeting">
-              Create Meeting
-            </div>
-          </div>
-
+    			
+    			<div id="header-tools" class="pure-u-3-4">
+              <i class="icon-power-1"></i>
+    				  <i class="icon-sliders"></i>                    
+    			</div>
     		</div>
-
     	</div>
 
     	<div id="navigation-bar">
 
             <div id="nav-wrap" class="pt-wrapper">
 
-                
-                <div class="nav-main-item pt-trigger main-item-active" data-page="meetings" data-animation="18" data-goto="1">
+                <div class="nav-main-item pt-trigger main-item-active" data-page="news" data-animation="18" data-goto="1">
+                   <i class="icon-rss">
+                   </i>
+                   <p>
+                    News
+                   </p>
+                </div>
+                <div class="nav-main-item pt-trigger" data-page="projects" data-animation="18" data-goto="2">
+                   <i class="icon-projects">
+                   </i>
+                   <p>
+                    Projects
+                   </p>
+                </div>
+                <div class="nav-main-item pt-trigger" data-page="meetings" data-animation="18" data-goto="3">
                    <i class="icon-meetings">
                    </i>
                    <p>
                     Meetings
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="meetings-room" data-animation="18" data-goto="2">
-                   <i class="icon-audience1">
+                <div class="nav-main-item pt-trigger" data-page="documents" data-animation="18" data-goto="4">
+                   <i class="icon-documents">
                    </i>
                    <p>
-                    Meeting Room
+                    Documents
                    </p>
-                </div>                
+                </div>
+                <div class="nav-main-item pt-trigger" data-page="tasks" data-animation="18" data-goto="5">
+                   <i class="icon-tasks">
+                   </i>
+                   <p>
+                    Tasks
+                   </p>
+                </div>
+                <div class="nav-main-item pt-trigger" data-page="members" data-animation="18" data-goto="6">
+                   <i class="icon-members">
+                   </i>
+                   <p>
+                    Members
+                   </p>
+                </div>
 
             </div>
 
     	</div>
 
-    	<div id="content" class="pt-wrapper">         
-          <div class="pt-page pt-page-1">
-            <div id="meetings-dashboard">
-              <div id="meetings-panel" class="z-depth-1">
+    	<div id="content" class="pt-wrapper">
+
+          <div id="news" class="pt-page pt-page-1 pure-g main-page">
+            <div id="profile-panel" class="pure-u-1-6 full-height">
+              <div id="profile-pic">
               </div>
             </div>
           </div>
-          <div class="pt-page pt-page-2">Meeting Room</div>          
+
+          <div id="projects" class="pt-page pt-page-2 pure-g main-page">
+            Projects
+          </div>
+
+          <div id="meetings" class="pt-page pt-page-3 pure-g main-page">
+            Meeting
+          </div>
+
+          <div id="documents" class="pt-page pt-page-4 pure-g main-page">
+            Documents
+          </div>
+
+          <div id="tasks" class="pt-page pt-page-5 pure-g main-page">
+            Tasks
+          </div>
+
+          <div id="members" class="pt-page pt-page-6 pure-g main-page">
+            Members
+          </div>
+
     	</div>  
 
 	</body>
