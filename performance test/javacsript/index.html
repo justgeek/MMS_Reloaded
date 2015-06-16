@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<style type="text/css">
+
+		</style>
+	</header>
+	<body onclick="generateList()">
+	</body>
+</html>
+<script type="text/javascript">
+var myArray=[];
+var iterations=500;
+
+	for(i=0;i<iterations;i++)
+		{
+			myArray.push({name:"just a name",color:'#'+(Math.random()*0xFFFFFF<<0).toString(16)});
+		}
+function generateList()
+{
+	for(i=0;i<myArray.length;i++)
+	{
+		  var newDiv = document.createElement("div"); 
+		  var newContent = document.createTextNode(myArray[i].name);
+		  newDiv.style["background-color"]= myArray[i].color;
+		  newDiv.appendChild(newContent); //add the text node to the newly created div.  
+		  document.body.appendChild(newDiv); 
+
+	}
+
+
+}
+//generateList();
+
+</script>
