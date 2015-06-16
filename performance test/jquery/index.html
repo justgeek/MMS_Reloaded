@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style type="text/css">
+
+		</style>
+	</header>
+	<body style="height:800px;" onclick="generateList()">
+	</body>
+</html>
+<script type="text/javascript">
+var myArray=[];
+var iterations=500;
+
+	for(i=0;i<iterations;i++)
+		{
+			myArray.push({name:"just a name",color:'#'+(Math.random()*0xFFFFFF<<0).toString(16)});
+		}
+function generateList()
+{
+	$("body").empty();
+	for(i=0;i<myArray.length;i++)
+	{
+		 $("body").append("<div style='background-color:"+myArray[i].color+";''>"+myArray[i].name+"</div>")
+
+	}
+
+
+}
+//generateList();
+
+</script>

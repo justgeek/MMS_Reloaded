@@ -1,0 +1,27 @@
+1- much cleaner UI/UX
+2- Easier to use
+3- Makes sense (no crap for real)
+
+
+Goal of application :
+
+create a tool to collaborate for users.
+ability to create meetings with all strings attached
+
+Meeting
+Schedule
+Members
+Notes
+Tasks
+Suggestions and voting system
+Logging all previous data
+
+
+Deep features
+
+can filter view
+can search data
+easier experience ( i.e drag task , drop to member , bam! your are done )
+each tile should have (view ,modify,remove)
+
+
