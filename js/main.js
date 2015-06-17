@@ -1,6 +1,10 @@
 	/************** document init **************/
 $(document).ready(function () {
 
+	/************************************ initialization****************************************/
+	/*this block should handle all  actions that should be initiated in application main window*/
+	$('#calendar').clndr();
+
 	/******************************* events ***************************************/
 	/*this block should handle every event that occurs in application main window*/
 
