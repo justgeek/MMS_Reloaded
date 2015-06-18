@@ -5560,10 +5560,10 @@ small {
 
 .btn, .btn-large, .btn-flat {
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 30px;
+  line-height: 30px;
   outline: 0;
   padding: 0 2rem;
   text-transform: uppercase;
@@ -5588,7 +5588,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #FFF;
-  background-color: #26a69a;
+  background-color: #d32f2f;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: .2s ease-out;
@@ -5685,14 +5685,18 @@ button.btn-floating {
     line-height: 1.5rem;
     width: 100%;
     text-align: left;
-    text-transform: none; }
+    text-transform: none;
+    background-color: #333;
+     }
     .dropdown-content li:hover, .dropdown-content li.active {
-      background-color: #eee; }
+      background-color: #d32f2f; }
     .dropdown-content li > a, .dropdown-content li > span {
       font-size: 1.2rem;
-      color: #26a69a;
-      display: block;
-      padding: 1rem 1rem; }
+      color: #eee;
+      display: inline-block;
+      padding: 1rem 1rem; 
+
+    }
 
 /*!
  * Waves v0.6.0

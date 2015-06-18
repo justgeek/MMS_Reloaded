@@ -1,0 +1,44 @@
+.clndr-controls
+{
+	display: table;
+    width: 100%;
+}
+
+.month
+{
+	width: 70%;
+    text-align: center;
+}
+.clndr-control-button,.month
+{
+	cursor: pointer;
+	display: table-cell;
+}
+
+#calendar thead
+{
+	border-bottom: 1px solid #D32F2F;
+}
+.clndr-next-button,.clndr-previous-button
+{
+	
+	border-radius: 100%;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	position: relative;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+	border: 2px solid #D32F2F;
+
+}
+.clndr-next-button:hover,.clndr-previous-button:hover
+{
+	background-color: #D32F2F;
+}
+ .header-day,.day
+ {
+ 	text-align: center;
+ }

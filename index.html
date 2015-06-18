@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="css/grids-responsive.css">					<!-- Pure.css style -->
 <link rel="stylesheet" href="css/grids-responsive-old-ie-min.css">		<!-- Pure.css style -->
 
-<link rel="stylesheet" href="css/materialize.css">    <!-- Materia style -->
+<link rel="stylesheet" href="css/calendar.css">       <!-- calendar style -->
+<link rel="stylesheet" href="css/materialize.css">    <!-- Material style -->
 
 
 
@@ -35,28 +36,41 @@
 
     <body>
 
-    	<div id="header">
+    	<div id="header" class="noselect">
     		<div class="pure-g full-height">
-    			<div id="logo" class="pure-u-1-4">
+    			<div id="logo" class="pure-u-3-4">
     				logo
     			</div>
     			
-    			<div id="header-tools" class="pure-u-3-4">
-              <i class="icon-power-1"></i>
-    				  <i class="icon-sliders"></i>                    
+    			<div id="header-tools" class="pure-u-1-4">
+              <i class="icon-power-1 tool-icon"></i>
+    				  <i class="icon-sliders tool-icon"></i> 
+              <div id="create-new-btn">
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>add new</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                      <li class="add-new-anchor"><i class="icon-projects drop-icon"></i>Project</li>
+                      <li class="add-new-anchor"><i class="icon-meetings drop-icon"></i>Meeting</li>                      
+                      <li class="add-new-anchor"><i class="icon-documents drop-icon"></i>Document</li>
+                      <li class="add-new-anchor"><i class="icon-tasks drop-icon"></i>Task</li>
+                      <li class="add-new-anchor"><i class="icon-members drop-icon"></i>Member</li>
+                    </ul>
+              </div>                   
     			</div>
     		</div>
     	</div>
 
-    	<div id="navigation-bar">
+    	<div id="navigation-bar" class="noselect">
 
             <div id="nav-wrap" class="pt-wrapper">
 
-                <div class="nav-main-item pt-trigger main-item-active" data-page="news" data-animation="18" data-goto="1">
+                <div class="nav-main-item pt-trigger main-item-active" data-page="feed" data-animation="18" data-goto="1">
                    <i class="icon-rss">
                    </i>
                    <p>
-                    News
+                    Feed
                    </p>
                 </div>
                 <div class="nav-main-item pt-trigger" data-page="projects" data-animation="18" data-goto="2">
@@ -94,6 +108,8 @@
                     Members
                    </p>
                 </div>
+                <div class="nav-main-item pt-trigger pure-g" id="create-new-btn-anchor" data-page="create" data-animation="18" data-goto="7" > 
+                </div>
 
             </div>
 
@@ -104,6 +120,14 @@
           <div id="news" class="pt-page pt-page-1 pure-g main-page">
             <div id="profile-panel" class="pure-u-1-6 full-height">
               <div id="profile-pic">
+              </div>
+              <div id="profile-name">
+                Mohammed Taher
+              </div>
+              <div id="profile-role">
+                Front-End Developer
+              </div>
+              <div id="calendar">
               </div>
             </div>
           </div>
@@ -128,11 +152,18 @@
             Members
           </div>
 
+          <div class="pt-page pt-page-7 pure-g main-page create-new-page">            
+          </div>
+
     	</div>  
 
 	</body>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>  
+  <script type="text/javascript" src="js/materialize.min.js"></script>  
+  <script type="text/javascript" src="js/moment.js"></script>  
+  <script type="text/javascript" src="js/clndr.min.js"></script>  
   <script type="text/javascript" src="js/transition.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
