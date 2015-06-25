@@ -19,6 +19,11 @@ $(document).ready(function () {
       belowOrigin: false// Displays dropdown below the button
     }
   );
+	 //initiate date picker
+	 $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
 
 
 
@@ -32,14 +37,20 @@ $(document).ready(function () {
 
 	//create-new anchor link to hidden navigation button
 	$("#create-new-btn").on("click",".add-new-anchor",function(){
-		if(currentPage=="create")//check if create page is already visible on stage , then implement a different animation for better UX
+		if(currentPage==$(this).data("anchor"))
 		{
+			return true;
+		}
+		else if(currentPage.indexOf("create")!=-1)//check if one of create pages is already visible on stage , then implement a different animation for better UX
+		{
+		  $(".hidden-anchor[data-page='"+$(this).data("anchor")+"']").data("animation",19).trigger('click');
 
 		}
 		else
 		{
-		  $('#create-new-btn-anchor').trigger('click');	
+		  $(".hidden-anchor[data-page='"+$(this).data("anchor")+"']").data("animation",17).trigger('click');	// if fired when no create pages are on stage , use then normal page transition
 		}
+
 		
 	});
 
@@ -48,8 +59,9 @@ $(document).ready(function () {
 	//navigation items events
 
 	$("#nav-wrap").on("click",".nav-main-item",function(){
+
 		var $clicked=$(this);
-		currentPage=$clicked.data("page"); //assign currentPage to current page on stage
+		
 
 		if($clicked.hasClass("main-item-active") || $clicked.hasClass("disabled"))//check if clicked item is already active , or animation is in progress
 		{
@@ -60,22 +72,37 @@ $(document).ready(function () {
 		{
 			//Disable all buttons till animation ends , removed on transition.js (function onEndAnimation)
 			$(".nav-main-item").addClass("disabled")
-			//change animation-data corresponding to next or previous tab clicked
-			if($(".main-item-active").index()>$clicked.index())
+			//change animation-data corresponding to next or previous tab clicked , exclude create pages hidden button
+			if(!$clicked.hasClass("hidden-anchor")) //check if clicked item (invoked via trigger) is a hidden-anchor
 			{
+				if($(".main-item-active").index()>$clicked.index())
+				{
 				$clicked.data("animation",17);
-			}				
-			else
-			{
+				}				
+				else
+				{
 				$clicked.data("animation",18);
+				}
+
 			}
+			
 				
 			$(".main-item-active").removeClass("main-item-active");
 			$clicked.addClass("main-item-active");
 			pageAnimate($clicked); // a function found in transition.js
+			currentPage=$clicked.data("page"); //assign currentPage to current page on stage
 		}
 
 	})
 
+	$("#submit-project").on("click",function (){$("#add-project").parsley().validate()});
+
+
+
 	/************************ End of Document Events *****************************/
+
+	/************************************* Functions ******************************************/
+	/*this block should handle every function that can be invoked throughout whole application*/
+
+    
 })
