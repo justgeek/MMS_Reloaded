@@ -53,7 +53,7 @@
                     <!-- Dropdown Structure -->
                     <ul id='create-page-dropdown' class='dropdown-content'>                      
                       <li class="add-new-anchor colorize-background-hover" data-anchor="create-project"><i class="icon-projects drop-icon"></i>Project</li>
-                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-meeting"><i class="icon-meetings drop-icon"></i>Meeting</li>                      
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-meeting"><i class="icon-meetings drop-icon"></i>Meeting</li>
                       <li class="add-new-anchor colorize-background-hover" data-anchor="create-document"><i class="icon-documents drop-icon"></i>Document</li>
                       <li class="add-new-anchor colorize-background-hover" data-anchor="create-task"><i class="icon-tasks drop-icon"></i>Task</li>
                       <li class="add-new-anchor colorize-background-hover" data-anchor="create-member"><i class="icon-members drop-icon"></i>Member</li>
@@ -183,18 +183,18 @@
                   </div>                  
                   <div class="row">
                     <div class="input-field col s12 m12 l12">
-                      <textarea rows="5" id="project-description" class="styled-text-area" data-parsley-required="true"></textarea>
+                      <textarea rows="5" id="project-description" class="styled-text-area object-description" data-parsley-required="true"></textarea>
                       <label for="project-description">Project Description</label>                     
                     </div>                    
                   </div>                            
                 </form>
-                <form class="col s12 m6 l6">
+                <form id="add-project-members" class="col s12 m6 l6">
                   <div class="row">
                     <h1>2. Add Members To Your Project</h1>
                   </div>
                   <div class="col s12 m12 l12">
                         <ul class="tabs switch-members-list">
-                          <li class="tab col s6 m6 l6"><a class="active" href="#all-members">all members</a></li>
+                          <li class="tab col s6 m6 l6"><a class="active" href="#project-all-members">all members</a></li>
                           <li class="tab col s6 m6 l6"><a  href="#project-members">project members (0)</a></li>                          
                         </ul>
                   </div>
@@ -205,7 +205,7 @@
                     </div>                    
                   </div>
                   <div class="row">
-                    <div id="all-members">
+                    <div id="project-all-members">
                       <ul class="contact-list">
                         <li class="contact-member col s12 m12 l6">
                           <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
@@ -263,7 +263,7 @@
               </div>
           </div> 
 
-          <div id="create-meeting" class="pt-page pt-page-8 main-page create-new-page">
+          <div id="create-meeting" class="pt-page pt-page-8 main-page create-new-page scrollable">
             <div class="row">                               
                 <form id="add-meeting" class="col s12 m6 l6">
                   <div class="row">
@@ -273,6 +273,10 @@
                     <div class="input-field col s12 m12 l12">
                       <input id="meeting_name" type="text" data-parsley-required="true">
                       <label for="meeting_name">Meeting Name</label>
+                    </div> 
+                    <div class="input-field col s12 m12 l12">
+                      <input id="meeting_location" type="text" data-parsley-required="true">
+                      <label for="meeting_location">Meeting Location</label>
                     </div>                    
                   </div> 
                   <div class="row">
@@ -285,13 +289,13 @@
                   </div>                
                                             
                 </form>
-                <form class="col s12 m6 l6">
+                <form id="add-meeting-members" class="col s12 m6 l6">
                   <div class="row">
                     <h1>2. Add Members To Your Meeting</h1>
                   </div>
                   <div class="col s12 m12 l12">
                         <ul class="tabs switch-members-list">
-                          <li class="tab col s6 m6 l6"><a class="active" href="#all-members">all members</a></li>
+                          <li class="tab col s6 m6 l6"><a class="active" href="#meeting-all-members">all members</a></li>
                           <li class="tab col s6 m6 l6"><a  href="#meeting-members">meeting members (0)</a></li>                          
                         </ul>
                   </div>
@@ -302,7 +306,7 @@
                     </div>                    
                   </div>
                   <div class="row">
-                    <div id="all-members">
+                    <div id="meeting-all-members">
                       <ul class="contact-list">
                         <li class="contact-member col s12 m12 l6">
                           <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
@@ -353,15 +357,71 @@
                       </ul>
                     </div>             
                   </div>   
-                </form>                        
+                </form> 
+                <form id="add-meeting-objectives" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>3. Add Meeting Objectives</h1>
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s7 m7 l7">                      
+                      <input placeholder="Objective" type="text">                                          
+                    </div> 
+                    <div class="input-field col s3 m3 l3">                      
+                      <input placeholder="Discussion Duration (minutes)" type="text">                                          
+                    </div> 
+                    <div class="input-field col s2 m2 l2">                      
+                      <a class="btn">Add</a>                                       
+                    </div>                   
+                  </div>                
+                </form>
+                <form id="add-meeting-modules" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>4. Add Meeting Modules</h1>
+                  </div> 
+                  <div class="row">
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-headset"></i></a>
+                     <p>audio chat</p>
+                    </div>
+                   <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-video35"></i></a>
+                     <p>video chat</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-computer-screen35"></i></a>
+                     <p>screen sharer</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-share15"></i></a>
+                     <p>file sharer</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-voice29"></i></a>
+                     <p>audio recorder</p>
+                    </div>               
+                  </div>                 
+                </form>                         
               </div>
               <div class="row">
                 <button id="submit-meeting" class="btn submit-object" type="submit" name="action">Create Project</button>
               </div>
           </div>
 
-          <div id="create-document" class="pt-page pt-page-9 main-page create-new-page">    
-          doc        
+          <div id="create-document" class="pt-page pt-page-9 main-page create-new-page">
+            <div class="row valign-wrapper full-height">
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/google-drive-icon.svg')"></div>
+                <p>upload using Google drive</p>
+              </div>
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/dropbox-icon.svg')"></div> 
+                <p>upload using Dropbox</p>               
+              </div>
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/upload-icon.svg')"></div> 
+                <p>upload from Local Disk</p>
+              </div>
+            </div>
           </div>
 
           <div id="create-task" class="pt-page pt-page-10 main-page create-new-page">  
@@ -377,6 +437,7 @@
 	</body>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
   <script type="text/javascript" src="js/parsley.min.js"></script>
   <script type="text/javascript" src="js/underscore-min.js"></script>  
   <script type="text/javascript" src="js/materialize.min.js"></script>  

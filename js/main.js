@@ -25,6 +25,13 @@ $(document).ready(function () {
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
 
+	 //initiate scrollables ( nicescroll )
+	 $(".scrollable").niceScroll({cursorcolor: "#333", // change cursor color in hex
+        cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
+        cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
+        cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
+        cursorborder: "0px solid #fff", })
+
 
 
 
@@ -94,9 +101,6 @@ $(document).ready(function () {
 		}
 
 	})
-
-	$("#submit-project").on("click",function (){$("#add-project").parsley().validate()});
-
 
 
 	/************************ End of Document Events *****************************/

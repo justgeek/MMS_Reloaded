@@ -5588,7 +5588,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #FFF;
-  background-color: #d32f2f;
+  background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: .2s ease-out;
@@ -5598,7 +5598,7 @@ small {
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #2bbbad; }
+    background-color: rgba(255, 255, 255, 0.4); }
 
 .btn-floating {
   display: inline-block;

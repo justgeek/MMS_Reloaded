@@ -144,7 +144,7 @@ input:-moz-placeholder { color:inherit; }
 {
 	background-image: url(../img/projects.svg);
 }
-#create-project input,#create-project label,#create-project #project-description,#create-project ul a,.contact-list .contact-member,#submit-project
+.create-new-page input,.create-new-page label,.create-new-page .object-description,.create-new-page ul a,.contact-list .contact-member,.submit-object
 {
 	font-size: 1.5rem;
 }
@@ -189,6 +189,21 @@ input:-moz-placeholder { color:inherit; }
 {
 	font-style: italic;	
 }
+#add-meeting-modules .meeting-module
+{
+	padding: 5px;
+	display: inline-block;
+	text-align: center;	
+}
+#add-meeting-modules .meeting-module p
+{
+	font-size: 1.5rem;
+	text-align: center;
+}
+#add-meeting-modules .meeting-module i
+{
+	font-size: 2.5rem;
+}
 .submit-object
 {
 	position: relative;
@@ -198,9 +213,25 @@ input:-moz-placeholder { color:inherit; }
 	background-color: #333;
 	color: #fff;
 }
-#submit-project:hover
+.submit-object:hover
 {
 	background-color: #444;
+}
+
+#create-document .document-upload-service-icon
+{
+	min-height: 150px;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	cursor: pointer;
+
+}
+#create-document .document-upload-service p
+{
+	font-size: 1.8rem;
+	text-align: center;
 }
 .hidden-anchor
 {
