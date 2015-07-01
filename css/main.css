@@ -8,6 +8,10 @@ html,body
 	display: table;
 	overflow: hidden;
 }
+input::-webkit-input-placeholder { color:inherit; }
+input::-moz-placeholder { color:inherit; } 
+input:-ms-input-placeholder { color:inherit; }
+input:-moz-placeholder { color:inherit; }
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -15,6 +19,13 @@ html,body
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.styled-text-area
+{
+	outline: none;
+	resize:none;
+	border: none;
+	border-bottom: 1px #fff solid;
 }
 .rtl,.arabic
 {
@@ -46,7 +57,7 @@ html,body
 #header-tools
 {
 	height: 100%;
-    font-size: 3em;
+    font-size: 3rem;
     display: table;
 }
 #header-tools .tool-icon,#header-tools .drop-icon
@@ -77,7 +88,7 @@ html,body
 	color: #fff;
 	font-family: roboto;
 	text-align: center;
-	font-size: 0.6em;
+	font-size: 1.6rem;
 	display: table-cell;
 	vertical-align: middle;
 	cursor: pointer;
@@ -98,14 +109,150 @@ html,body
 	background-color: #d32f2f;
 	color: #fff;	
 }
-#create-new-btn-anchor
+.create-new-page:before
+{
+	content: "";
+	position: absolute;
+	top: 0; 
+	left: 0;
+	width: 100%; 
+	height: 100%;  
+	opacity: .1; 
+	z-index: -1;	
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.create-new-page h1
+{
+	font-size: 3rem;	
+}
+.create-new-page .switch-members-list
+{
+	background-color: transparent;
+}
+.create-new-page .switch-members-list a,#member-name + i
+{	
+	color: #fff;
+}
+.create-new-page .indicator
+{
+	background-color: rgba(255,255,255,0.4);
+}
+#create-project:before
+{
+	background-image: url(../img/projects.svg);
+}
+.create-new-page input,.create-new-page label,.create-new-page .object-description,.create-new-page ul a,.contact-list .contact-member,.submit-object
+{
+	font-size: 1.5rem;
+}
+#create-project #project-description
+{
+	height: 250px;
+}
+.contact-list
+{
+	height: 300px;
+}
+.contact-list .contact-member
+{
+	height: 75px;
+	font-family: roboto;	
+	display: table;
+	padding: 10px;
+}
+.contact-member .contact-profile-pic,.contact-member .contact-info
+{
+	position: relative;
+	display: inline-block;
+	box-sizing:border-box;
+	padding: 10px;
+}
+.contact-member .contact-profile-pic,.contact-member .contact-info
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+.contact-member .contact-profile-pic
+{
+	border-radius: 100%;
+	border: 4px solid rgba(255,255,255,0.6);
+	width: 75px;
+	height: 75px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+.contact-member .contact-role
+{
+	font-style: italic;	
+}
+#add-meeting-modules .meeting-module
+{
+	padding: 5px;
+	display: inline-block;
+	text-align: center;	
+}
+#add-meeting-modules .meeting-module p
+{
+	font-size: 1.5rem;
+	text-align: center;
+}
+#add-meeting-modules .meeting-module i
+{
+	font-size: 2.5rem;
+}
+.submit-object
+{
+	position: relative;
+	margin: 0 auto;
+	width: 200px;
+	display: block;	
+	background-color: #333;
+	color: #fff;
+}
+.submit-object:hover
+{
+	background-color: #444;
+}
+
+#create-document .document-upload-service-icon
+{
+	min-height: 150px;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	cursor: pointer;
+
+}
+#create-document .document-upload-service p
+{
+	font-size: 2rem;
+	text-align: center;
+	font-weight: bold;
+	font-family: roboto;
+}
+#add-task .select-wrapper
+{
+	top:10px;
+}
+#add-task .select-wrapper *
+{
+	color: #fff;
+	font-size: 1.5rem;
+}
+#add-task  .select-dropdown
+{
+	border-bottom: 1px #fff solid;	
+}
+.hidden-anchor
 {
 	display: none;
 }
-.creatable-item-slot
-{
 
-}
 #navigation-bar
 {
 	display: table-row;
@@ -124,7 +271,7 @@ html,body
 	margin: 0 auto;
 	text-align: center;
 }
-.nav-main-item
+.nav-main-item:not(.hidden-anchor)
 {
 	display: inline-block;
 	position: relative;
@@ -134,14 +281,13 @@ html,body
 	float: left;
 	color: #333;
 	cursor: pointer;
-	border-bottom: 0px;
 }
 
 .nav-main-item i
 {
 	position: relative;
     display: block;  
-    font-size: 3.5em;
+    font-size: 3.5rem;
     vertical-align: middle;
     display: table;
 	text-align: center;
@@ -151,11 +297,11 @@ html,body
 .nav-main-item p
 {
 	font-family: roboto;
-	font-size: 2em;
+	font-size: 2rem;
 	margin: 5px;
 }
 
-.main-item-active
+.nav-main-item.main-item-active
 {
 	border-bottom: 5px solid #d32f2f;
 	color: #d32f2f;
@@ -214,14 +360,14 @@ html,body
 {
 	height: auto;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2rem;
 
 }
 #profile-role
 {
 	height: auto;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	font-style:italic;
 
 }
@@ -235,5 +381,5 @@ html,body
 	padding: 10px;
 	box-sizing: border-box;
 	font-family: roboto;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 }

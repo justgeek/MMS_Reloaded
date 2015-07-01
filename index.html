@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/main.css">								         <!-- tiles style -->
-<link rel="stylesheet" href="css/transitions.css">                 <!-- transitions style -->
-<link rel="stylesheet" href="css/transition-animation.css">        <!-- transition animation style -->
-
 
 <link rel="stylesheet" href="css/grids.css">						    <!-- Pure.css style -->
 <link rel="stylesheet" href="css/grids-units.css">						<!-- Pure.css style -->
@@ -27,6 +23,11 @@
 <link rel="stylesheet" href="fontello/css/fontello-ie7.css">
 <link rel="stylesheet" href="fontello/css/fontello-ie7-codes.css">
 
+                                <!-- Main CSS & Transitions-->
+<link rel="stylesheet" href="css/main.css">                        <!-- tiles style -->
+<link rel="stylesheet" href="css/transitions.css">                 <!-- transitions style -->
+<link rel="stylesheet" href="css/transition-animation.css">        <!-- transition animation style -->
+
 
 
 
@@ -47,15 +48,15 @@
     				  <i class="icon-sliders tool-icon"></i> 
               <div id="create-new-btn">
                     <!-- Dropdown Trigger -->
-                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>add new</a>
+                    <a class='dropdown-button btn colorize-background' href='#' data-activates='create-page-dropdown'>add new</a>
 
                     <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                      <li class="add-new-anchor"><i class="icon-projects drop-icon"></i>Project</li>
-                      <li class="add-new-anchor"><i class="icon-meetings drop-icon"></i>Meeting</li>                      
-                      <li class="add-new-anchor"><i class="icon-documents drop-icon"></i>Document</li>
-                      <li class="add-new-anchor"><i class="icon-tasks drop-icon"></i>Task</li>
-                      <li class="add-new-anchor"><i class="icon-members drop-icon"></i>Member</li>
+                    <ul id='create-page-dropdown' class='dropdown-content'>                      
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-project"><i class="icon-projects drop-icon"></i>Project</li>
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-meeting"><i class="icon-meetings drop-icon"></i>Meeting</li>
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-document"><i class="icon-documents drop-icon"></i>Document</li>
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-task"><i class="icon-tasks drop-icon"></i>Task</li>
+                      <li class="add-new-anchor colorize-background-hover" data-anchor="create-member"><i class="icon-members drop-icon"></i>Member</li>
                     </ul>
               </div>                   
     			</div>
@@ -66,58 +67,66 @@
 
             <div id="nav-wrap" class="pt-wrapper">
 
-                <div class="nav-main-item pt-trigger main-item-active" data-page="feed" data-animation="18" data-goto="1">
-                   <i class="icon-rss">
+                <div class="nav-main-item pt-trigger main-item-active colorize-border-bottom" data-page="feed" data-animation="18" data-goto="1">
+                   <i class="icon-rss colorize-color">
                    </i>
                    <p>
                     Feed
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="projects" data-animation="18" data-goto="2">
-                   <i class="icon-projects">
+                <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="projects" data-animation="18" data-goto="2">
+                   <i class="icon-projects colorize-color">
                    </i>
                    <p>
                     Projects
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="meetings" data-animation="18" data-goto="3">
-                   <i class="icon-meetings">
+                <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="meetings" data-animation="18" data-goto="3">
+                   <i class="icon-meetings colorize-color">
                    </i>
                    <p>
                     Meetings
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="documents" data-animation="18" data-goto="4">
-                   <i class="icon-documents">
+                <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="documents" data-animation="18" data-goto="4">
+                   <i class="icon-documents colorize-color">
                    </i>
                    <p>
                     Documents
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="tasks" data-animation="18" data-goto="5">
-                   <i class="icon-tasks">
+                <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="tasks" data-animation="18" data-goto="5">
+                   <i class="icon-tasks colorize-color">
                    </i>
                    <p>
                     Tasks
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger" data-page="members" data-animation="18" data-goto="6">
-                   <i class="icon-members">
+                <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="members" data-animation="18" data-goto="6">
+                   <i class="icon-members colorize-color">
                    </i>
                    <p>
                     Members
                    </p>
                 </div>
-                <div class="nav-main-item pt-trigger pure-g" id="create-new-btn-anchor" data-page="create" data-animation="18" data-goto="7" > 
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-project" data-animation="18" data-goto="7" > 
+                </div>
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-meeting" data-animation="18" data-goto="8" > 
+                </div>
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-document" data-animation="18" data-goto="9" > 
+                </div>
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-task" data-animation="18" data-goto="10" > 
+                </div>
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-member" data-animation="18" data-goto="11" > 
                 </div>
 
             </div>
 
     	</div>
 
-    	<div id="content" class="pt-wrapper">
+    	<div id="content" class="pt-wrapper colorize-border-top">
 
-          <div id="news" class="pt-page pt-page-1 pure-g main-page">
+          <div id="feed" class="pt-page pt-page-1 pure-g main-page">
             <div id="profile-panel" class="pure-u-1-6 full-height">
               <div id="profile-pic">
               </div>
@@ -152,7 +161,362 @@
             Members
           </div>
 
-          <div class="pt-page pt-page-7 pure-g main-page create-new-page">            
+          <div id="create-project" class="pt-page pt-page-7 main-page create-new-page">            
+              <div class="row">                               
+                <form id="add-project" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>1. Create New Project</h1>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <input id="project_name" type="text" data-parsley-required="true">
+                      <label for="project_name">Project Name</label>
+                    </div>                    
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                      <input id="project-start-date" placeholder="Project Start Date" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>  
+                    <div class="input-field col s12 m6 l6">
+                      <input id="project-end-date" placeholder="Project End Date" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>                    
+                  </div>                  
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <textarea rows="5" id="project-description" class="styled-text-area object-description" data-parsley-required="true"></textarea>
+                      <label for="project-description">Project Description</label>                     
+                    </div>                    
+                  </div>                            
+                </form>
+                <form id="add-project-members" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>2. Add Members To Your Project</h1>
+                  </div>
+                  <div class="col s12 m12 l12">
+                        <ul class="tabs switch-members-list">
+                          <li class="tab col s6 m6 l6"><a class="active" href="#project-all-members">all members</a></li>
+                          <li class="tab col s6 m6 l6"><a  href="#project-members">project members (0)</a></li>                          
+                        </ul>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">                      
+                      <input id="member-name" placeholder="Member Name" type="text" class="validate"> 
+                      <i class="material-icons prefix icon-search"></i>                     
+                    </div>                    
+                  </div>
+                  <div class="row">
+                    <div id="project-all-members">
+                      <ul class="contact-list">
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                      </ul>
+                    </div> 
+                    <div id="project-members">
+                      <ul class="contact-list">
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                      </ul>
+                    </div>             
+                  </div>   
+                </form>                        
+              </div>
+              <div class="row">
+                <button id="submit-project" class="btn submit-object" type="submit" name="action">Create Project</button>
+              </div>
+          </div> 
+
+          <div id="create-meeting" class="pt-page pt-page-8 main-page create-new-page scrollable">
+            <div class="row">                               
+                <form id="add-meeting" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>1. Create New Meeting</h1>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <input id="meeting_name" type="text" data-parsley-required="true">
+                      <label for="meeting_name">Meeting Name</label>
+                    </div> 
+                    <div class="input-field col s12 m12 l12">
+                      <input id="meeting_location" type="text" data-parsley-required="true">
+                      <label for="meeting_location">Meeting Location</label>
+                    </div>                    
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                      <input id="meeting-start-date" placeholder="Meeting Start Date" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>  
+                    <div class="input-field col s12 m6 l6">
+                      <input id="meeting-end-date" placeholder="Meeting End Date" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>                    
+                  </div>                
+                                            
+                </form>
+                <form id="add-meeting-members" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>2. Add Members To Your Meeting</h1>
+                  </div>
+                  <div class="col s12 m12 l12">
+                        <ul class="tabs switch-members-list">
+                          <li class="tab col s6 m6 l6"><a class="active" href="#meeting-all-members">all members</a></li>
+                          <li class="tab col s6 m6 l6"><a  href="#meeting-members">meeting members (0)</a></li>                          
+                        </ul>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">                      
+                      <input id="member-name" placeholder="Member Name" type="text" class="validate"> 
+                      <i class="material-icons prefix icon-search"></i>                     
+                    </div>                    
+                  </div>
+                  <div class="row">
+                    <div id="meeting-all-members">
+                      <ul class="contact-list">
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                      </ul>
+                    </div> 
+                    <div id="meeting-members">
+                      <ul class="contact-list">
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                      </ul>
+                    </div>             
+                  </div>   
+                </form> 
+                <form id="add-meeting-objectives" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>3. Add Meeting Objectives</h1>
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s7 m7 l7">                      
+                      <input placeholder="Objective" type="text">                                          
+                    </div> 
+                    <div class="input-field col s3 m3 l3">                      
+                      <input placeholder="Discussion Duration (minutes)" type="text">                                          
+                    </div> 
+                    <div class="input-field col s2 m2 l2">                      
+                      <a class="btn">Add</a>                                       
+                    </div>                   
+                  </div>                
+                </form>
+                <form id="add-meeting-modules" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>4. Add Meeting Modules</h1>
+                  </div> 
+                  <div class="row">
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-headset"></i></a>
+                     <p>audio chat</p>
+                    </div>
+                   <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-video35"></i></a>
+                     <p>video chat</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-computer-screen35"></i></a>
+                     <p>screen sharer</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-share15"></i></a>
+                     <p>file sharer</p>
+                    </div> 
+                    <div class="meeting-module col s4 m3 l2">
+                     <a class="btn-floating btn-large waves-effect waves-light red"><i class="icon-voice29"></i></a>
+                     <p>audio recorder</p>
+                    </div>               
+                  </div>                 
+                </form>                         
+              </div>
+              <div class="row">
+                <button id="submit-meeting" class="btn submit-object" type="submit" name="action">Create Project</button>
+              </div>
+          </div>
+
+          <div id="create-document" class="pt-page pt-page-9 main-page create-new-page">
+            <div class="row valign-wrapper full-height">
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/google-drive-icon.svg')"></div>
+                <p>Upload using Google drive</p>
+              </div>
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/dropbox-icon.svg')"></div> 
+                <p>Upload using Dropbox</p>               
+              </div>
+              <div class="document-upload-service valign center-align col s12 m4 l4" >
+                <div class="document-upload-service-icon" style="background-image:url('img/upload-icon.svg')"></div> 
+                <p>Upload from Local Disk</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="create-task" class="pt-page pt-page-10 main-page create-new-page">
+            <div class="row">                               
+                <form id="add-task" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>1. Create New Task</h1>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <input id="task_name" type="text" data-parsley-required="true">
+                      <label for="task_name">Task title</label>
+                    </div>  
+                    <div class="input-field col s12 m12 l12">
+                      <input id="task_project_name" type="text" data-parsley-required="true">
+                      <label for="task_project_name">Related Project</label>
+                    </div>                   
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                      <input id="task-start-date" placeholder="Task Start Date" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                      <input id="task-deadline" placeholder="Task Deadline" type="date" class="datepicker" data-parsley-required="true">                      
+                    </div>
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <select>                          
+                          <option value="1">Bug</option>
+                          <option value="2">Feature</option>
+                          <option value="3">Idea</option>
+                        </select>
+                        <label>Task Type</label>
+                    </div>                    
+                  </div> 
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <select>                          
+                          <option value="1">Urgent</option>
+                          <option value="2">High</option>
+                          <option value="3">Normal</option>
+                          <option value="3">Low</option>
+                          <option value="3">NA</option>
+                        </select>
+                        <label>Task Priority</label>
+                    </div>                    
+                  </div>       
+                </form> 
+                <form id="assign-task-member" class="col s12 m6 l6">
+                  <div class="row">
+                    <h1>2. Assign Task to someone</h1>
+                  </div>                  
+                  <div class="row">
+                    <div class="input-field col s12 m12 l12">                      
+                      <input id="member-name" placeholder="Member Name" type="text" class="validate"> 
+                      <i class="material-icons prefix icon-search"></i>                     
+                    </div>                    
+                  </div>
+                  <div class="row">
+                    <div id="task-members">
+                      <ul class="contact-list">
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                        <li class="contact-member col s12 m12 l6">
+                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
+                          <div class="contact-info">
+                            <div class="contact-name">Tony Stark</div>
+                            <div class="contact-role">Stark Industries CEO</div>
+                          </div>                        
+                        </li>
+                      </ul>
+                    </div>                                 
+                  </div>
+                </form>
+            </div>  
+            <div class="row">
+                <button id="submit-task" class="btn submit-object" type="submit" name="action">Create Task</button>
+            </div>             
+          </div>
+
+          <div id="create-member" class="pt-page pt-page-11 main-page create-new-page">     
+          member       
           </div>
 
     	</div>  
@@ -160,6 +524,8 @@
 	</body>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+  <script type="text/javascript" src="js/parsley.min.js"></script>
   <script type="text/javascript" src="js/underscore-min.js"></script>  
   <script type="text/javascript" src="js/materialize.min.js"></script>  
   <script type="text/javascript" src="js/moment.js"></script>  
