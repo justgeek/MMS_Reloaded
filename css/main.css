@@ -218,7 +218,7 @@ input:-moz-placeholder { color:inherit; }
 	background-color: #444;
 }
 
-#create-document .document-upload-service-icon
+#create-document .document-upload-service-icon,#create-member .member-add-service-icon
 {
 	min-height: 150px;
 	background-position: center;
@@ -228,7 +228,7 @@ input:-moz-placeholder { color:inherit; }
 	cursor: pointer;
 
 }
-#create-document .document-upload-service p
+#create-document .document-upload-service p,#create-member .member-add-service p
 {
 	font-size: 2rem;
 	text-align: center;
@@ -247,6 +247,10 @@ input:-moz-placeholder { color:inherit; }
 #add-task  .select-dropdown
 {
 	border-bottom: 1px #fff solid;	
+}
+#create-member #add-member-email
+{
+	font-size: 1.5rem;
 }
 .hidden-anchor
 {

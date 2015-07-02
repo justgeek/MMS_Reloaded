@@ -403,7 +403,7 @@
                 </form>                         
               </div>
               <div class="row">
-                <button id="submit-meeting" class="btn submit-object" type="submit" name="action">Create Project</button>
+                <button id="submit-meeting" class="btn submit-object" type="submit" name="action">Create Meeting</button>
               </div>
           </div>
 
@@ -515,8 +515,27 @@
             </div>             
           </div>
 
-          <div id="create-member" class="pt-page pt-page-11 main-page create-new-page">     
-          member       
+          <div id="create-member" class="pt-page pt-page-11 main-page create-new-page">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input id="add_member_email" type="text" data-parsley-required="true">
+                  <label for="add_member_email">Invite by email</label>
+                </div>                    
+            </div> 
+            <div class="row valign-wrapper full-height">               
+                <div class="member-add-service valign center-align col s12 m4 l4" >
+                  <div class="member-add-service-icon" style="background-image:url('img/members-linkedin.svg')"></div>
+                  <p>import from linkedin</p>
+                </div>
+                <div class="member-add-service valign center-align col s12 m4 l4" >
+                  <div class="member-add-service-icon" style="background-image:url('img/members-google.svg')"></div>
+                  <p>import from google contacts</p>
+                </div>
+                <div class="member-add-service valign center-align col s12 m4 l4" >
+                  <div class="member-add-service-icon" style="background-image:url('img/members-yahoo.svg')"></div>
+                  <p>import from yahoo contacts</p>
+                </div>
+            </div>     
           </div>
 
     	</div>  
