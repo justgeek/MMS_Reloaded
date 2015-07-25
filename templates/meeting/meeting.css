@@ -1,0 +1,130 @@
+#meeting-instance
+{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;	
+}
+.window-wrap,.window
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.window-wrap{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction:column;
+  height: 100%;
+}
+
+.window-wrap li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-transition: -webkit-box-flex 300ms;
+  -webkit-transition: -webkit-flex 300ms;
+  transition: -webkit-box-flex 300ms;
+  transition: -ms-flex 300ms;
+  transition: flex 300ms;
+}
+
+.window-wrap li:nth-child(1) { background:#777979; }
+
+.window-wrap li:nth-child(2) { background:#424444; }
+
+.window-wrap .full
+{
+  -webkit-box-flex: 20;
+  -webkit-flex: 20;
+  -ms-flex: 20;
+  flex: 20;
+}
+.window-wrap .not-full
+{
+  flex:0.0001;
+}
+
+.window-wrap .shrunk
+{
+  -webkit-box-flex: 15;
+  -webkit-flex: 15;
+  -ms-flex: 15;
+  flex: 15;
+}
+.window .window-control-bar
+{
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+	width: 100%;
+	height: 45px;	
+  display: table;
+}
+.window-control-bar i
+{
+  cursor: pointer;
+  float: right;
+  padding: 10px;
+}
+.window-control-bar i:before
+{
+  float: right;  
+  font-size: 2rem;
+  color: #fff;
+}
+.meeting-modules
+{  
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  height: 75px;
+  right: 0px;
+  left: 0px;  
+  bottom: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.meeting-modules .meeting-module-btn
+{  
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+  display: inline-block;
+ 
+}
+.meeting-module-btn p
+{
+  margin: 2px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: roboto;
+}
+.modules-hidden-holder
+{
+  display: none;
+}
+.meeting-module-window
+{
+  width: 100%;
+  height: 100%; 
+  position: absolute; 
+  background-color: inherit;  
+}
+/* experimental */
+.meeting-module-window img
+{
+  top:10%;
+  width: auto;
+  height: 80%;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+}

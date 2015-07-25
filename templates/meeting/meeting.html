@@ -1,0 +1,33 @@
+<!-- <link rel="stylesheet" href="meeting.css">
+ --><div id="meeting-instance">
+	<ul class="window-wrap">
+	  <li id="meeting-top-window" class="window">
+	  	<div class="window-control-bar">
+	  		<i class="icon-expand41 expand"></i>
+	  		<i class="icon-windows23 shrink"></i>
+	  	</div>
+	  	<div class="window-content">
+        </div>
+	  </li>
+	  <li id="meeting-bottom-window" class="window">
+	  	<div class="window-control-bar">
+	  		<i class="icon-expand41 expand"></i>
+	  		<i class="icon-windows23 shrink"></i>
+	  	</div>
+	  	<div class="window-content">
+	  	</div>
+	  </li>  
+	</ul>
+	<div id="meeting-modules" class="meeting-modules h-scrollable" data-query="each(meetingModules)">
+		<div class="meeting-module-btn">
+         <a class="btn-floating btn-large waves-effect waves-light red" data-link="{{id}}"><i class="{{icon}}"></i></a>
+         <p>{{name}}</p>          
+        </div>
+	</div>
+</div>
+<div class="modules-hidden-holder" data-query="each(meetingModules)">
+	<div id={{id}} class="meeting-module-window" data-query=css('background',color)>
+		<img src="templates/meeting/{{id}}.jpg">
+	</div>
+</div>
+ <script type="text/javascript" src="templates/meeting/meeting.js"></script>

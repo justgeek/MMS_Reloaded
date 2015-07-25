@@ -30,7 +30,12 @@ $(document).ready(function () {
         cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
         cursoropacitymax: 1, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
         cursorwidth: "5px", // cursor width in pixel (you can also write "5px")
-        cursorborder: "0px solid #fff", })
+        cursorborder: "0px solid #fff" });
+	 $(".h-scrollable").niceScroll({ 
+        cursoropacitymin: 0, // change opacity when cursor is inactive (scrollabar "hidden" state), range from 1 to 0
+        cursoropacitymax: 0, // change opacity when cursor is active (scrollabar "visible" state), range from 1 to 0
+        cursorwidth: "0px", // cursor width in pixel (you can also write "5px")
+        cursorborder: "0px solid #fff" })
 
 	 //initiate selectables
 	 $('select').material_select();
@@ -105,6 +110,14 @@ $(document).ready(function () {
 
 	})
 
+	//view single instance event (project-meeting..etc)
+
+	$(".main-page").on("click",".main-tile",function(){
+		$("#object-view").empty();
+		$("#object-view").load($(this).data("link")) //load corresponding html page
+		$(".hidden-anchor[data-page='object-view']").trigger('click'); // click the hidden anchor link to bring page to stage
+	})
+
 
 	/************************ End of Document Events *****************************/
 
@@ -118,23 +131,23 @@ $(document).ready(function () {
 
     //function to process hex color mid tone color
 	function padToTwo(numberString) {
-    if (numberString.length < 2) {
-        numberString = '0' + numberString;
+	    if (numberString.length < 2) {
+	        numberString = '0' + numberString;
+	    }
+	    return numberString;
     }
-    return numberString;
-}
 
-function hexAverage() {
-    var args = Array.prototype.slice.call(arguments);
-    return args.reduce(function (previousValue, currentValue) {
-        return currentValue
-            .replace(/^#/, '')
-            .match(/.{2}/g)
-            .map(function (value, index) {
-                return previousValue[index] + parseInt(value, 16);
-            });
-    }, [0, 0, 0])
-    .reduce(function (previousValue, currentValue) {
-        return previousValue + padToTwo(Math.floor(currentValue / args.length).toString(16));
-    }, '#');
-}
+	function hexAverage() {
+	    var args = Array.prototype.slice.call(arguments);
+	    return args.reduce(function (previousValue, currentValue) {
+	        return currentValue
+	            .replace(/^#/, '')
+	            .match(/.{2}/g)
+	            .map(function (value, index) {
+	                return previousValue[index] + parseInt(value, 16);
+	            });
+	    }, [0, 0, 0])
+	    .reduce(function (previousValue, currentValue) {
+	        return previousValue + padToTwo(Math.floor(currentValue / args.length).toString(16));
+	    }, '#');
+	}

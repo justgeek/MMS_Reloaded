@@ -3,11 +3,6 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="css/grids.css">						    <!-- Pure.css style -->
-<link rel="stylesheet" href="css/grids-units.css">						<!-- Pure.css style -->
-<link rel="stylesheet" href="css/grids-core.css">						<!-- Pure.css style -->
-<link rel="stylesheet" href="css/grids-responsive.css">					<!-- Pure.css style -->
-<link rel="stylesheet" href="css/grids-responsive-old-ie-min.css">		<!-- Pure.css style -->
 
 <link rel="stylesheet" href="css/calendar.css">       <!-- calendar style -->
 <link rel="stylesheet" href="css/materialize.css">    <!-- Material style -->
@@ -29,6 +24,10 @@
 <link rel="stylesheet" href="css/transitions.css">                 <!-- transitions style -->
 <link rel="stylesheet" href="css/transition-animation.css">        <!-- transition animation style -->
 
+                                <!-- Templates Style-->
+<link rel="stylesheet" href="templates/meeting/meeting.css">       <!-- app main style -->
+
+
 
 
 
@@ -39,12 +38,12 @@
     <body>
 
     	<div id="header" class="noselect">
-    		<div class="pure-g full-height">
-    			<div id="logo" class="pure-u-3-4">
+    		<div class="row full-height">
+    			<div id="logo" class="col s9 l9 m9">
     				logo
     			</div>
     			
-    			<div id="header-tools" class="pure-u-1-4">
+    			<div id="header-tools" class="col s3 l3 m3">
               <i class="icon-power-1 tool-icon"></i>
     				  <i class="icon-sliders tool-icon"></i> 
               <div id="create-new-btn">
@@ -68,11 +67,11 @@
 
             <div id="nav-wrap" class="pt-wrapper">
 
-                <div class="nav-main-item pt-trigger main-item-active colorize-border-bottom" data-page="feed" data-animation="18" data-goto="1">
-                   <i class="icon-rss colorize-color">
+                <div class="nav-main-item pt-trigger main-item-active colorize-border-bottom" data-page="timeline" data-animation="18" data-goto="1">
+                   <i class="icon-businessman243 colorize-color">
                    </i>
                    <p>
-                    Feed
+                    Timeline
                    </p>
                 </div>
                 <div class="nav-main-item pt-trigger colorize-border-bottom" data-page="projects" data-animation="18" data-goto="2">
@@ -120,6 +119,8 @@
                 </div>
                 <div class="nav-main-item pt-trigger hidden-anchor" data-page="create-member" data-animation="18" data-goto="11" > 
                 </div>
+                <div class="nav-main-item pt-trigger hidden-anchor" data-page="object-view" data-animation="32" data-goto="12" > 
+                </div>
 
             </div>
 
@@ -127,7 +128,7 @@
 
     	<div id="content" class="pt-wrapper colorize-border-top">
 
-          <div id="feed" class="pt-page pt-page-1 row main-page">
+          <div id="timeline" class="pt-page pt-page-1 row main-page scrollable">
             <div id="profile-panel" class="col s12 l2 m2 full-height">
               <div id="profile-pic">
               </div>
@@ -144,7 +145,7 @@
             </div>
           </div>
 
-          <div id="projects" class="pt-page pt-page-2 row main-page">
+          <div id="projects" class="pt-page pt-page-2 row main-page scrollable">
             <div class="full-height col s12 l12 m12 main-page-content" data-query="each(projects)">
               <div class="col s12 l3 m4">
                 <div class="main-tile project-tile z-depth-1 row"> 
@@ -162,25 +163,52 @@
             </div>
           </div>
 
-          <div id="meetings" class="pt-page pt-page-3 pure-g main-page">
-            Meeting
+          <div id="meetings" class="pt-page pt-page-3 row main-page scrollable">
+            <div class="full-height col s12 l12 m12 main-page-content" data-query="each(meetings)">
+              <div class="col s12 l3 m4">
+                <div class="main-tile meeting-tile z-depth-1 row" data-link="templates/meeting/meeting.html"> 
+                  <div class="tile-content col s12 l12 m12" >
+                    <h1>{{title}}</h1>
+                    <p>{{startDate}} : {{startTime}} </p>                    
+                  </div>                 
+                  <div class="row tile-icons">
+                    <div class="center-align">
+                      <i class="icon-trash"></i>
+                    </div>
+                  </div>
+                </div>              
+              </div>
+            </div>
           </div>
 
-          <div id="documents" class="pt-page pt-page-4 pure-g main-page">
-            Documents
+          <div id="documents" class="pt-page pt-page-4 row main-page scrollable">
+            <img style="width:100%;height:auto;" src="templates/meeting/my-documents.jpg">
           </div>
 
-          <div id="tasks" class="pt-page pt-page-5 pure-g main-page">
-            Tasks
+          <div id="tasks" class="pt-page pt-page-5 row main-page scrollable" style="background-color:#81869C">
+            <img style="width:100%;height:auto" src="templates/meeting/my-tasks.jpg">
           </div>
 
-          <div id="members" class="pt-page pt-page-6 pure-g main-page">
-            Members
+          <div id="members" class="pt-page pt-page-6 row main-page scrollable">
+            <div class="row">
+              <div id="all-members">
+                <ul class="contact-list" data-query="each(members)">
+                  <li class="contact-member col s12 m4 l4">
+                    <div class="contact-profile-pic" data-query="css('background-image', picture)"></div>
+                    <div class="contact-info">
+                      <div class="contact-name">{{name}}</div>
+                      <div class="contact-role">{{role}}</div>
+                    </div>                        
+                  </li>                        
+                </ul>
+              </div> 
+            </div>
           </div>
 
-          <div id="create-project" class="pt-page pt-page-7 main-page create-new-page">            
+          <div id="create-project" class="pt-page pt-page-7 main-page create-new-page scrollable">
+           <div class="container">            
               <div class="row">                               
-                <form id="add-project" class="col s12 m6 l6">
+                <form id="add-project" class="col s12 m12 l12">
                   <div class="row">
                     <h1>1. Create New Project</h1>
                   </div>
@@ -191,10 +219,10 @@
                     </div>                    
                   </div> 
                   <div class="row">
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m12 l12">
                       <input id="project-start-date" placeholder="Project Start Date" type="date" class="datepicker" data-parsley-required="true">                      
                     </div>  
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m12 l12">
                       <input id="project-end-date" placeholder="Project End Date" type="date" class="datepicker" data-parsley-required="true">                      
                     </div>                    
                   </div>                  
@@ -205,7 +233,7 @@
                     </div>                    
                   </div>                            
                 </form>
-                <form id="add-project-members" class="col s12 m6 l6">
+                <form id="add-project-members" class="col s12 m12 l12">
                   <div class="row">
                     <h1>2. Add Members To Your Project</h1>
                   </div>
@@ -223,53 +251,25 @@
                   </div>
                   <div class="row">
                     <div id="project-all-members">
-                      <ul class="contact-list">
+                      <ul class="contact-list" data-query="each(members)">
                         <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-profile-pic" data-query="css('background-image', picture)"></div>
                           <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
+                            <div class="contact-name">{{name}}</div>
+                            <div class="contact-role">{{role}}</div>
                           </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
+                        </li>                        
                       </ul>
                     </div> 
                     <div id="project-members">
-                      <ul class="contact-list">
+                      <ul class="contact-list" data-query="each(members)">
                         <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-profile-pic" data-query="css('background-image', picture)"></div>
                           <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
+                            <div class="contact-name">{{name}}</div>
+                            <div class="contact-role">{{role}}</div>
                           </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
+                        </li>                       
                       </ul>
                     </div>             
                   </div>   
@@ -278,11 +278,13 @@
               <div class="row">
                 <button id="submit-project" class="btn submit-object" type="submit" name="action">Create Project</button>
               </div>
+            </div>
           </div> 
 
           <div id="create-meeting" class="pt-page pt-page-8 main-page create-new-page scrollable">
-            <div class="row">                               
-                <form id="add-meeting" class="col s12 m6 l6">
+            <div class="container">
+              <div class="row">                               
+                <form id="add-meeting" class="col s12 m12 l12">
                   <div class="row">
                     <h1>1. Create New Meeting</h1>
                   </div>
@@ -297,16 +299,16 @@
                     </div>                    
                   </div> 
                   <div class="row">
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m12 l12">
                       <input id="meeting-start-date" placeholder="Meeting Start Date" type="date" class="datepicker" data-parsley-required="true">                      
                     </div>  
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m12 l12">
                       <input id="meeting-end-date" placeholder="Meeting End Date" type="date" class="datepicker" data-parsley-required="true">                      
                     </div>                    
                   </div>                
                                             
                 </form>
-                <form id="add-meeting-members" class="col s12 m6 l6">
+                <form id="add-meeting-members" class="col s12 m12 l12">
                   <div class="row">
                     <h1>2. Add Members To Your Meeting</h1>
                   </div>
@@ -324,58 +326,30 @@
                   </div>
                   <div class="row">
                     <div id="meeting-all-members">
-                      <ul class="contact-list">
+                      <ul class="contact-list" data-query="each(members)">
                         <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-profile-pic" data-query="css('background-image', picture)"></div>
                           <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
+                            <div class="contact-name">{{name}}</div>
+                            <div class="contact-role">{{role}}</div>
                           </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
+                        </li>                        
                       </ul>
                     </div> 
                     <div id="meeting-members">
-                      <ul class="contact-list">
+                      <ul class="contact-list" data-query="each(members)">
                         <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                          <div class="contact-profile-pic" data-query="css('background-image', picture)"></div>
                           <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
+                            <div class="contact-name">{{name}}</div>
+                            <div class="contact-role">{{role}}</div>
                           </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
+                        </li>                        
                       </ul>
                     </div>             
                   </div>   
                 </form> 
-                <form id="add-meeting-objectives" class="col s12 m6 l6">
+                <form id="add-meeting-objectives" class="col s12 m12 l12">
                   <div class="row">
                     <h1>3. Add Meeting Objectives</h1>
                   </div> 
@@ -391,7 +365,7 @@
                     </div>                   
                   </div>                
                 </form>
-                <form id="add-meeting-modules" class="col s12 m6 l6">
+                <form id="add-meeting-modules" class="col s12 m12 l12">
                   <div class="row">
                     <h1>4. Add Meeting Modules</h1>
                   </div> 
@@ -422,9 +396,10 @@
               <div class="row">
                 <button id="submit-meeting" class="btn submit-object" type="submit" name="action">Create Meeting</button>
               </div>
+            </div>
           </div>
 
-          <div id="create-document" class="pt-page pt-page-9 main-page create-new-page">
+          <div id="create-document" class="pt-page pt-page-9 main-page create-new-page scrollable">
             <div class="row valign-wrapper full-height">
               <div class="document-upload-service valign center-align col s12 m4 l4" >
                 <div class="document-upload-service-icon" style="background-image:url('img/google-drive-icon.svg')"></div>
@@ -441,94 +416,96 @@
             </div>
           </div>
 
-          <div id="create-task" class="pt-page pt-page-10 main-page create-new-page">
-            <div class="row">                               
-                <form id="add-task" class="col s12 m6 l6">
-                  <div class="row">
-                    <h1>1. Create New Task</h1>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                      <input id="task_name" type="text" data-parsley-required="true">
-                      <label for="task_name">Task title</label>
-                    </div>  
-                    <div class="input-field col s12 m12 l12">
-                      <input id="task_project_name" type="text" data-parsley-required="true">
-                      <label for="task_project_name">Related Project</label>
-                    </div>                   
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12 m6 l6">
-                      <input id="task-start-date" placeholder="Task Start Date" type="date" class="datepicker" data-parsley-required="true">                      
+          <div id="create-task" class="pt-page pt-page-10 main-page create-new-page scrollable">
+            <div class="container">
+              <div class="row">                               
+                  <form id="add-task" class="col s12 m12 l12">
+                    <div class="row">
+                      <h1>1. Create New Task</h1>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                      <input id="task-deadline" placeholder="Task Deadline" type="date" class="datepicker" data-parsley-required="true">                      
+                    <div class="row">
+                      <div class="input-field col s12 m12 l12">
+                        <input id="task_name" type="text" data-parsley-required="true">
+                        <label for="task_name">Task title</label>
+                      </div>  
+                      <div class="input-field col s12 m12 l12">
+                        <input id="task_project_name" type="text" data-parsley-required="true">
+                        <label for="task_project_name">Related Project</label>
+                      </div>                   
                     </div>
-                  </div> 
-                  <div class="row">
-                    <div class="input-field col s12">
-                        <select>                          
-                          <option value="1">Bug</option>
-                          <option value="2">Feature</option>
-                          <option value="3">Idea</option>
-                        </select>
-                        <label>Task Type</label>
-                    </div>                    
-                  </div> 
-                  <div class="row">
-                    <div class="input-field col s12">
-                        <select>                          
-                          <option value="1">Urgent</option>
-                          <option value="2">High</option>
-                          <option value="3">Normal</option>
-                          <option value="3">Low</option>
-                          <option value="3">NA</option>
-                        </select>
-                        <label>Task Priority</label>
-                    </div>                    
-                  </div>       
-                </form> 
-                <form id="assign-task-member" class="col s12 m6 l6">
-                  <div class="row">
-                    <h1>2. Assign Task to someone</h1>
-                  </div>                  
-                  <div class="row">
-                    <div class="input-field col s12 m12 l12">                      
-                      <input id="member-name" placeholder="Member Name" type="text" class="validate"> 
-                      <i class="material-icons prefix icon-search"></i>                     
-                    </div>                    
-                  </div>
-                  <div class="row">
-                    <div id="task-members">
-                      <ul class="contact-list">
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                        <li class="contact-member col s12 m12 l6">
-                          <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
-                          <div class="contact-info">
-                            <div class="contact-name">Tony Stark</div>
-                            <div class="contact-role">Stark Industries CEO</div>
-                          </div>                        
-                        </li>
-                      </ul>
-                    </div>                                 
-                  </div>
-                </form>
-            </div>  
-            <div class="row">
-                <button id="submit-task" class="btn submit-object" type="submit" name="action">Create Task</button>
+                    <div class="row">
+                      <div class="input-field col s12 m12 l12">
+                        <input id="task-start-date" placeholder="Task Start Date" type="date" class="datepicker" data-parsley-required="true">                      
+                      </div>
+                      <div class="input-field col s12 m12 l12">
+                        <input id="task-deadline" placeholder="Task Deadline" type="date" class="datepicker" data-parsley-required="true">                      
+                      </div>
+                    </div> 
+                    <div class="row">
+                      <div class="input-field col s12">
+                          <select>                          
+                            <option value="1">Bug</option>
+                            <option value="2">Feature</option>
+                            <option value="3">Idea</option>
+                          </select>
+                          <label>Task Type</label>
+                      </div>                    
+                    </div> 
+                    <div class="row">
+                      <div class="input-field col s12">
+                          <select>                          
+                            <option value="1">Urgent</option>
+                            <option value="2">High</option>
+                            <option value="3">Normal</option>
+                            <option value="3">Low</option>
+                            <option value="3">NA</option>
+                          </select>
+                          <label>Task Priority</label>
+                      </div>                    
+                    </div>       
+                  </form> 
+                  <form id="assign-task-member" class="col s12 m12 l12">
+                    <div class="row">
+                      <h1>2. Assign Task to someone</h1>
+                    </div>                  
+                    <div class="row">
+                      <div class="input-field col s12 m12 l12">                      
+                        <input id="member-name" placeholder="Member Name" type="text" class="validate"> 
+                        <i class="material-icons prefix icon-search"></i>                     
+                      </div>                    
+                    </div>
+                    <div class="row">
+                      <div id="task-members">
+                        <ul class="contact-list">
+                          <li class="contact-member col s12 m12 l6">
+                            <div class="contact-profile-pic" style="background-image:url(profile_pics/tony.jpg)"></div>
+                            <div class="contact-info">
+                              <div class="contact-name">Tony Stark</div>
+                              <div class="contact-role">Stark Industries CEO</div>
+                            </div>                        
+                          </li>
+                          <li class="contact-member col s12 m12 l6">
+                            <div class="contact-profile-pic" style="background-image:url(profile_pics/ben.jpg)"></div>
+                            <div class="contact-info">
+                              <div class="contact-name">Tony Stark</div>
+                              <div class="contact-role">Stark Industries CEO</div>
+                            </div>                        
+                          </li>
+                          <li class="contact-member col s12 m12 l6">
+                            <div class="contact-profile-pic" style="background-image:url(profile_pics/bruce.jpg)"></div>
+                            <div class="contact-info">
+                              <div class="contact-name">Tony Stark</div>
+                              <div class="contact-role">Stark Industries CEO</div>
+                            </div>                        
+                          </li>
+                        </ul>
+                      </div>                                 
+                    </div>
+                  </form>
+              </div>  
+              <div class="row">
+                  <button id="submit-task" class="btn submit-object" type="submit" name="action">Create Task</button>
+              </div>
             </div>             
           </div>
 
@@ -555,6 +532,10 @@
             </div>     
           </div>
 
+          <div id="object-view" class="pt-page pt-page-12 row main-page">
+            Object
+          </div>
+
     	</div>  
 
 	</body>
@@ -571,17 +552,19 @@
   <script type="text/javascript" src="js/transition.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
+
+  <!-- Template Scripts !-->
+
   <!-- Backend development test scripts !-->
   <script type="text/javascript" src="backend/objects.js"></script>
-  <script>
-    var pattern = Trianglify({
-        width: $(".tile-banner").width(),
-        height: $(".tile-banner").height(),
-        x_colors:['#d32f2f',hexAverage('#d32f2f',"#000000")],
-        cell_size:100,
-        variance:0.9
-    });
-   // $(".tile-banner").append(pattern.png())
+
+  <!-- Disable AJAX Cache !-->
+  <script type="text/javascript">
+  $.ajaxSetup ({// Disable caching of AJAX responses
+    cache: false
+  });
+  </script>
+  
 </script>
 
 

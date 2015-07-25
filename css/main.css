@@ -1,3 +1,13 @@
+@font-face
+{
+	src:url("../font/roboto/Roboto-Regular.ttf");
+	font-family: roboto;
+}
+@font-face
+{
+	src:url("../font/roboto/Roboto-Light.ttf");
+	font-family: roboto-light;
+}
 html,body
 {
 	margin: 0px;
@@ -44,9 +54,13 @@ input:-moz-placeholder { color:inherit; }
 	position: relative;
 	height: 60px;
 	display: table-row;
-	background-color: #333;
+	background-color: #d32f2f;
 	color: #eeeeee;
 
+}
+#header .row
+{
+	margin: 0px;
 }
 #logo
 {
@@ -202,7 +216,7 @@ input:-moz-placeholder { color:inherit; }
 }
 #add-meeting-modules .meeting-module i
 {
-	font-size: 2.5rem;
+	font-size: 3rem;
 }
 .submit-object
 {
